@@ -5,6 +5,16 @@ María Jesús Ramírez Correa 201073584-2
 Juan Ignacio De La Jara Rojo 2773508-8
 
 
+Grupos usuario:
+- 1: Administrador
+- 2: Moderador
+- 3: Usuario común
+
+Público:
+- 0: Pública
+- 1: Privada
+
+
 Avance casos:
 
 - Caso 1: Faltan columnas cantidad de temas, total mensajes, último tema comentado.
@@ -24,3 +34,5 @@ Avance casos:
 - Falta que si user es admin, pueda modificar otros perfiles.
 - Falta ver todo el tema de permisos de admin y moderador, por ahora lo dejé como que las opciones sólo pueden ser accedidas por un
 usuario logueado.
+
+
