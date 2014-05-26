@@ -30,9 +30,9 @@ Avance casos:
 - Caso 8: Falta que muestre 5 últimos temas creados y comentados por el usuario (VISTA)
 - Caso 9: LISTO
 - Caso 10: LISTO
-- Caso 11: Faltan columnas nombre remitente, leído (tiene que mostrar SI o NO)
+- Caso 11: Falta columna leído (tiene que mostrar SI o NO)
 - Caso 12: -
-- Caso 13: -
+- Caso 13: LISTO
 
 - Falta que si user es admin, pueda modificar otros perfiles.
 
@@ -41,6 +41,6 @@ usuario logueado.
 
 - Faltan vistas (triggers terminados)
 
-- CASO 6 Y 9: Lo hace sin  mostrar datos anteriores
+- CASO 6 Y 9: Los hace sin mostrar datos anteriores
 
 

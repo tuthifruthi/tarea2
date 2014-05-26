@@ -51,12 +51,14 @@ SET NOCOUNT ON;
 
 DECLARE @id_buzon=(SELECT id_buzon FROM inserted);
 DECLARE @mensajes=(SELECT mensajes FROM BuzonEntrada WHERE id_buzon=@id_buzon);
+DECLARE @mensajes_sin_leer=(SELECT mensajes_sin_leer FROM BuzonEntrada WHERE id_buzon=@id_buzon);
 
 SET @mensajes=@mensajes+1;
+SET @mensajes_sin_leer=@mensajes_sin_leer+1;
 
 BEGIN
 
-UPDATE BuzonEntrada SET mensajes=@mensajes WHERE id_buzon=@id_buzon;
+UPDATE BuzonEntrada SET mensajes=@mensajes, mensajes_sin_leer=@mensajes_sin_leer WHERE id_buzon=@id_buzon;
 
 END
 END
