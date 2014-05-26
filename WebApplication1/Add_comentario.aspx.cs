@@ -13,9 +13,13 @@ namespace WebApplication1
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        static string prevPage = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                prevPage = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Responder_Click(object sender, EventArgs e)
@@ -41,17 +45,12 @@ namespace WebApplication1
             SqlDataReader d2 = myCommand2.ExecuteReader();
             d2.Close();
 
-            string qry3 = "UPDATE Usuario SET cantidad_comentarios=(cantidad_comentarios+1) WHERE id_usuario='"+iduser+"'";
-            SqlCommand myCommand3 = new SqlCommand(qry3, con1);
-            SqlDataReader d3 = myCommand3.ExecuteReader();
-            d2.Close();
-
             con1.Close();
 
 
             string message = string.Empty;
             message = "Se ha agregado el comentario exitosamente!.";
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect(prevPage);
 
             ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
         }

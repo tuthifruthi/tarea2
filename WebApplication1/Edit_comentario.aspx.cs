@@ -13,9 +13,13 @@ namespace WebApplication1
 {
     public partial class WebForm8 : System.Web.UI.Page
     {
+        static string prevPage = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                prevPage = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Edit_Click(object sender, EventArgs e)
@@ -33,13 +37,15 @@ namespace WebApplication1
                     connection.Open();
                     Int32 rowsAffected = command.ExecuteNonQuery();
                     Console.WriteLine("RowsAffected: {0}", rowsAffected);
-                    Response.Redirect("~/Default.aspx");
+                    Response.Redirect(prevPage);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+
+
         }
     }
 }

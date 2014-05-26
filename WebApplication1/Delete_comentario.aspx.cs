@@ -13,6 +13,7 @@ namespace WebApplication1
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        static string prevPage = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             string conString = ConfigurationManager.ConnectionStrings["foromagic"].ConnectionString;
@@ -26,7 +27,12 @@ namespace WebApplication1
 
             con1.Close();
 
-            Response.Redirect("~/Default.aspx");
+            if (!IsPostBack)
+            {
+                prevPage = Request.UrlReferrer.ToString();
+            }
+
+            Response.Redirect(prevPage);
 
         }
     }

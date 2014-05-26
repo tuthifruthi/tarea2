@@ -71,7 +71,7 @@
       <td>
       <asp:Repeater id="Repeater3" runat="server">
          <ItemTemplate>
-       <%if (Session["is_logged_in"] != null && Session["is_logged_in"].Equals(true))
+       <% if (Session["is_logged_in"] != null && Session["is_logged_in"].Equals(true))
      { %>
       [ <asp:HyperLink ID="tema" runat="server" NavigateUrl='<%# "~/Edit_comentario.aspx?IDComentario="+DataBinder.Eval(Container.DataItem, "id_comentario") %>'>Editar</asp:HyperLink> ]
       [ <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Delete_comentario.aspx?IDComentario="+DataBinder.Eval(Container.DataItem, "id_comentario") %>'>Eliminar</asp:HyperLink> ]

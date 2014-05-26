@@ -34,16 +34,15 @@
         <tr>
         <td><asp:Repeater id="Repeater1" runat="server">
          <ItemTemplate>
-
          <asp:HyperLink ID="tema" runat="server" NavigateUrl='<%# "~/Tema.aspx?IDCat="+DataBinder.Eval(Container.DataItem, "id_categoria") %>'><b><big><%# DataBinder.Eval(Container.DataItem,"nombre") %></big></b></asp:HyperLink>
          <br />
-         <%# DataBinder.Eval(Container.DataItem,"descripcion") %>
          <br />
          <br>
     	 </ItemTemplate>
       </asp:Repeater> </td>
             <td>
-                &nbsp;</td>
+
+                </td>
             <td>
                 &nbsp;</td>
             <td>

@@ -31,7 +31,7 @@ Avance casos:
 - Caso 9: LISTO
 - Caso 10: LISTO
 - Caso 11: Falta columna leído (tiene que mostrar SI o NO)
-- Caso 12: -
+- Caso 12: LISTO (falta probar)
 - Caso 13: LISTO
 
 - Falta que si user es admin, pueda modificar otros perfiles.
@@ -42,5 +42,7 @@ usuario logueado.
 - Faltan vistas (triggers terminados)
 
 - CASO 6 Y 9: Los hace sin mostrar datos anteriores
+
+- Quitar el usuario que lo envió de la lista de usuarios disponibles para enviar MP's
 
 

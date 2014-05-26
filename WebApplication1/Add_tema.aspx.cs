@@ -13,9 +13,13 @@ namespace WebApplication1
 {
     public partial class WebForm7 : System.Web.UI.Page
     {
+        static string prevPage = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                prevPage = Request.UrlReferrer.ToString();
+            }
         }
 
         protected void Crear_Click(object sender, EventArgs e)
@@ -44,7 +48,7 @@ namespace WebApplication1
                 d2.Close();
                 con1.Close();
 
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect(prevPage);
             }
 
             else
@@ -55,7 +59,7 @@ namespace WebApplication1
                 d2.Close();
                 con1.Close();
 
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect(prevPage);
             }
            
         }
