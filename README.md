@@ -14,6 +14,9 @@ Público:
 - 0: Pública
 - 1: Privada
 
+Mensajes:
+- 1: Leído
+- 0: No Leído
 
 Avance casos:
 
@@ -22,12 +25,12 @@ Avance casos:
 - Caso 3: LISTO
 - Caso 4: LISTO
 - Caso 5: que Elimine/Edite comentario sólo si es propio o admin
-- Caso 6: Lo hace sin mostrar el anterior, pero está listo
+- Caso 6: LISTO
 - Caso 7: LISTO
-- Caso 8: Falta que muestre 5 últimos temas creados y comentados por el usuario
-- Caso 9: Lo hace sin mostrar los datos anteriores, pero está listo
+- Caso 8: Falta que muestre 5 últimos temas creados y comentados por el usuario (VISTA)
+- Caso 9: LISTO
 - Caso 10: LISTO
-- Caso 11: -
+- Caso 11: Faltan columnas nombre remitente, leído (tiene que mostrar SI o NO)
 - Caso 12: -
 - Caso 13: -
 
@@ -36,5 +39,8 @@ Avance casos:
 - Falta ver todo el tema de permisos de admin y moderador, por ahora lo dejé como que las opciones sólo pueden ser accedidas por un
 usuario logueado.
 
-- Faltan 2 triggers y las vistas
+- Faltan vistas (triggers terminados)
+
+- CASO 6 Y 9: Lo hace sin  mostrar datos anteriores
+
 
