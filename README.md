@@ -4,7 +4,6 @@ Tarea2BD
 María Jesús Ramírez Correa 201073584-2
 Juan Ignacio De La Jara Rojo 2773508-8
 
-
 Grupos usuario:
 - 1: Administrador
 - 2: Moderador
@@ -31,18 +30,13 @@ Avance casos:
 - Caso 9: LISTO
 - Caso 10: LISTO
 - Caso 11: Falta columna leído (tiene que mostrar SI o NO)
-- Caso 12: LISTO (falta probar)
+- Caso 12: LISTO falta probar, hay problema para que el id_mensaje quede guardado en dos páginas sucesivas.
 - Caso 13: LISTO
 
 - Falta que si user es admin, pueda modificar otros perfiles.
 
-- Falta ver todo el tema de permisos de admin y moderador, por ahora lo dejé como que las opciones sólo pueden ser accedidas por un
-usuario logueado.
-
-- Faltan vistas (triggers terminados)
+- Faltan vistas 
 
 - CASO 6 Y 9: Los hace sin mostrar datos anteriores
-
-- Quitar el usuario que lo envió de la lista de usuarios disponibles para enviar MP's
 
 
