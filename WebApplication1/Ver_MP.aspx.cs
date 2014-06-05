@@ -25,6 +25,8 @@ namespace WebApplication1
             d3.Close();
 
             con1.Close();
+            Session["IDmsj"] = Request.QueryString["IDMsj"];
+
         }
 
         public string GetNombreRemitente()

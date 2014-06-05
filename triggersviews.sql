@@ -69,4 +69,18 @@ END
 END
 RETURN
 
+CREATE VIEW View_Temas_Creados AS
+SELECT  TOP (5) dbo.Tema.nombre AS NombreTema, dbo.Usuario.nombre AS NombreUsuario
+FROM  dbo.Tema INNER JOIN
+dbo.Usuario ON dbo.Tema.id_usuario = dbo.Usuario.id_usuario
+ORDER BY dbo.Tema.id_tema DESC
+
+
+CREATE VIEW View_Ultimos_Comentarios AS
+SELECT TOP (5) dbo.Usuario.nombre AS NombreUsuario, dbo.Tema.nombre AS NombreTema
+FROM  dbo.Comentario INNER JOIN
+dbo.Tema ON dbo.Comentario.id_tema = dbo.Tema.id_tema INNER JOIN
+dbo.Usuario ON dbo.Comentario.id_usuario = dbo.Usuario.id_usuario AND dbo.Tema.id_usuario = dbo.Usuario.id_usuario
+ORDER BY dbo.Comentario.id_comentario DESC
+
 

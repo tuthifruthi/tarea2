@@ -49,6 +49,28 @@ namespace WebApplication1.Account
                         break;
                     default:
                         message = "Se ha registrado exitosamente!.";
+                        string conString = ConfigurationManager.ConnectionStrings["foromagic"].ConnectionString;
+                        SqlConnection con1 = new SqlConnection(conString);
+                        con1.Open();
+
+                        int iduser = 0;
+
+                        string strSQL = "SELECT id_usuario FROM Usuario WHERE nombre='" + UserName.Text + "'";
+                        SqlCommand myCommand = new SqlCommand(strSQL, con1);
+                        SqlDataReader d1 = myCommand.ExecuteReader();
+                        while (d1.Read())
+                          {
+                            iduser = int.Parse(d1["id_usuario"].ToString());
+                          }
+                         d1.Close();
+
+
+                        string qry2 = "INSERT INTO BuzonEntrada ([id_usuario],[mensajes_sin_leer],[mensajes]) VALUES ('" + iduser + "',0,0)";
+                        SqlCommand myCommand2 = new SqlCommand(qry2, con1);
+                        SqlDataReader d2 = myCommand2.ExecuteReader(); 
+                        d2.Close();
+
+                        con1.Close();
                         Response.Redirect("~/Default.aspx");
                         break;
                 }

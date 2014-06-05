@@ -48,7 +48,7 @@
             <td>
                 &nbsp;</td>
                 <td>
-      <% if (Session["is_logged_in"] != null && Session["is_logged_in"].Equals(true)) {%>
+      <% if (Session["is_logged_in"] != null && Session["is_logged_in"].Equals(true) && GetGrupoUser()==1) {%>
       <asp:Repeater id="Repeater2" runat="server">
          <ItemTemplate>
       [ <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Delete_cat.aspx?IDCat="+DataBinder.Eval(Container.DataItem, "id_categoria") %>'>Eliminar</asp:HyperLink> ]

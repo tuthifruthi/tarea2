@@ -12,9 +12,9 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
   
-
    <big><b>Mensaje de <%=GetNombreRemitente() %></b></big>
-   [ <asp:HyperLink ID="mp" runat="server" NavigateUrl='<%"~/Responder_MP.aspx?IDMsj="+Request.QueryString["IDMsj"] %>'>Responder</asp:HyperLink> ]
+   <% string id = Session["IDmsj"].ToString(); %>
+   [ <asp:HyperLink ID="mp" runat="server" NavigateUrl='<%"~/Responder_MP.aspx?IDMsj="+id %>'>Responder</asp:HyperLink> ]
    <br />
    <br />
 

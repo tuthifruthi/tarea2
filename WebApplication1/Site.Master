@@ -37,6 +37,7 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Index"/>
+                        <asp:MenuItem NavigateUrl="~/Users.aspx" Text="Usuarios Foro"/>
                     </Items>
                 </asp:Menu>
             </div>

@@ -13,6 +13,26 @@ namespace WebApplication1
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public int GetGrupoUser()
+        {
+            string conString = ConfigurationManager.ConnectionStrings["foromagic"].ConnectionString;
+            SqlConnection con1 = new SqlConnection(conString);
+            con1.Open();
+
+            string strSQL = "SELECT id_grupo FROM Usuario WHERE nombre='" + Session["UserName"].ToString() + "'";
+            SqlCommand myCommand = new SqlCommand(strSQL, con1);
+            SqlDataReader d1 = myCommand.ExecuteReader();
+            int idgrupo = 0;
+            while (d1.Read())
+            {
+                idgrupo = int.Parse(d1["id_grupo"].ToString());
+            }
+            d1.Close();
+            con1.Close();
+
+            return idgrupo;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection cnn = new SqlConnection(ConfigurationManager.ConnectionStrings["foromagic"].ConnectionString);

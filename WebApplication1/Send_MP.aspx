@@ -13,8 +13,8 @@
          <asp:Label ID="AddComment" runat="server">Usuario:</asp:Label>
          <br />
 
-      <asp:DropDownList ID="NombreUsers" runat="server">
-    </asp:DropDownList>
+      <asp:TextBox ID="TextBox1" runat="server" CssClass="textEntry" 
+        Height="24px" Width="201px"></asp:TextBox>
 
         <br />
         <br />

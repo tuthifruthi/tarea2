@@ -18,8 +18,6 @@
     <br />
    <br />
     
-    <asp:Repeater id="Repeater2" runat="server">
-   <ItemTemplate>
    
    <% string edad = GetAge();
       string tipo = GetTipo();  
@@ -30,13 +28,21 @@
             <td>
                 Nombre Usuario:</td>
             <td>
-                <%# DataBinder.Eval(Container.DataItem,"nombre") %></td>
+                 <asp:Repeater id="Repeater7" runat="server">
+         <ItemTemplate>
+        <%# DataBinder.Eval(Container.DataItem,"nombre") %>
+    	 </ItemTemplate>
+      </asp:Repeater> </td>
         </tr>
         <tr>
             <td>
                 Avatar:</td>
             <td>
-                <%# DataBinder.Eval(Container.DataItem,"avatar_url") %></td>
+                 <asp:Repeater id="Repeater6" runat="server">
+         <ItemTemplate>
+        <%# DataBinder.Eval(Container.DataItem,"avatar_url") %>
+    	 </ItemTemplate>
+      </asp:Repeater> </td>
         </tr>
         <tr>
             <td>
@@ -48,19 +54,34 @@
             <td>
                 Sexo:</td>
             <td>
-                <%# DataBinder.Eval(Container.DataItem,"sexo") %></td>
+            <asp:Repeater id="Repeater5" runat="server">
+         <ItemTemplate>
+        <%# DataBinder.Eval(Container.DataItem,"sexo") %>
+    	 </ItemTemplate>
+      </asp:Repeater> 
+                </td>
         </tr>
         <tr>
             <td>
                 Número de Comentarios:</td>
             <td>
-                <%# DataBinder.Eval(Container.DataItem,"cantidad_comentarios") %></td>
+            <asp:Repeater id="Repeater3" runat="server">
+         <ItemTemplate>
+        <%# DataBinder.Eval(Container.DataItem,"cantidad_comentarios") %>
+    	 </ItemTemplate>
+      </asp:Repeater> 
+                </td>
         </tr>
         <tr>
             <td>
                 Fecha Registro:</td>
             <td>
-                <%# DataBinder.Eval(Container.DataItem,"fecha_registro") %></td>
+            <asp:Repeater id="Repeater1" runat="server">
+         <ItemTemplate>
+         <%# DataBinder.Eval(Container.DataItem,"fecha_registro") %>
+    	 </ItemTemplate>
+      </asp:Repeater> 
+                </td>
         </tr>
         <tr>
             <td>
@@ -70,38 +91,26 @@
         </tr>
         <tr>
             <td>
-            </br>
+                
+           
                 5 últimos temas creados:</td>
             <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-               &nbsp; </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
+            <td><asp:Repeater id="Repeater4" runat="server">
+         <ItemTemplate>
+         <%# DataBinder.Eval(Container.DataItem,"nombre") %>
+         </br>
+    	 </ItemTemplate>
+      </asp:Repeater> </td>
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
+        
+         <tr>
             <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
+               &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -111,27 +120,24 @@
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
+         <tr>
+            <td><asp:Repeater id="Repeater2" runat="server">
+         <ItemTemplate>
+         <%# DataBinder.Eval(Container.DataItem,"nombre") %>
+         </br>
+    	 </ItemTemplate>
+      </asp:Repeater> </td>
             <td>
                 &nbsp;</td>
         </tr>
-        <tr>
+        
+         <tr>
             <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
+               &nbsp;</td>
             <td>
                 &nbsp;</td>
         </tr>
     </table>
    
-   </ItemTemplate>
-      </asp:Repeater>    
 
 </asp:Content>

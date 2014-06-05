@@ -69,6 +69,7 @@
             <td>
                  <br /></td>
                    <td>
+      <% if (Session["is_logged_in"] != null && Session["is_logged_in"].Equals(true) && (GetGrupoUser()==1 || GetGrupoUser()==2)) {%>
       <asp:Repeater id="Repeater1" runat="server">
          <ItemTemplate>
       
@@ -78,6 +79,9 @@
          <br>
     	 </ItemTemplate>
       </asp:Repeater>
+      <%}else{ %>
+      &nbsp;
+      <% } %>
         </td>
         </tr>
     </table>

@@ -16,22 +16,6 @@ namespace WebApplication1
         static string prevPage = String.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string conString = ConfigurationManager.ConnectionStrings["foromagic"].ConnectionString;
-            SqlConnection con1 = new SqlConnection(conString);
-            con1.Open();
-
-            String query = "SELECT nombre AS nombreuser, id_usuario AS iduser FROM Usuario";
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(query, con1);
-            da.Fill(dt);
-
-            NombreUsers.DataSource = dt;
-            NombreUsers.DataTextField = "nombreuser";
-            NombreUsers.DataValueField = "iduser";
-            NombreUsers.DataBind();
-
-            con1.Close();
 
             if (!IsPostBack)
             {
@@ -64,10 +48,23 @@ namespace WebApplication1
             SqlConnection con1 = new SqlConnection(conString);
             con1.Open();
 
+            //tener id_usuario TextBox1.Text
+
+
             //tener id_buzon
             int idbuzon = 0;
 
-            string strSQL = "SELECT id_buzon FROM BuzonEntrada WHERE id_usuario='" + NombreUsers.SelectedValue + "'";
+            string strSQL2 = "SELECT id_usuario FROM Usuario WHERE nombre='" + TextBox1.Text + "'";
+            SqlCommand myCommand2 = new SqlCommand(strSQL2, con1);
+            SqlDataReader d2 = myCommand2.ExecuteReader();
+            int iduser = 0;
+            while (d2.Read())
+            {
+                iduser = int.Parse(d2["id_usuario"].ToString());
+            }
+            d2.Close();
+
+            string strSQL = "SELECT id_buzon FROM BuzonEntrada WHERE id_usuario='" + iduser + "'";
             SqlCommand myCommand = new SqlCommand(strSQL, con1);
             SqlDataReader d1 = myCommand.ExecuteReader();
             while (d1.Read())
@@ -77,9 +74,9 @@ namespace WebApplication1
             d1.Close();
 
             string qry2 = "INSERT INTO MensajePrivado ([id_buzon],[id_remitente],[leido],[mensaje],[fecha_de_envio],[asunto]) VALUES ('" + idbuzon + "','" + GetID() + "',0,'" + Message.Text + "',GETDATE(),'" + Asunto.Text + "')";
-            SqlCommand myCommand2 = new SqlCommand(qry2, con1);
-            SqlDataReader d2 = myCommand2.ExecuteReader();
-            d2.Close();
+            SqlCommand myCommand3 = new SqlCommand(qry2, con1);
+            SqlDataReader d3 = myCommand3.ExecuteReader();
+            d3.Close();
 
             con1.Close();
 
